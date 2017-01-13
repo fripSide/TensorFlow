@@ -1,0 +1,31 @@
+#README
+
+### Usage
+支持命令：
+ help - show help information
+ exit - client exit
+ login [username] [password] - user login
+ register [username] [password] - user register
+ logout - user logout
+ talk [username] [message]
+ chat [message]
+ chatall [message]
+ enter [integer] - enter room#id
+ leave - leave room
+ create - create a new room
+ 21game [express] - 无空格的表达式，参与21点游戏
+
+example:
+login hhh 123
+create
+enter 1
+21game 2*3+7+9
+
+### Design
+服务器端基于select和非阻塞socket，接到消息立刻处理，并同步转发消息到对应的客户端。
+客户端采用阻塞socket，主线程读取命令行并send数据，recv线程阻塞接受消息并打印消息。
+数据传输，使用base64加密（不能用DES库）。
+服务器端数据保存，用pickle序列化然后加密（base64代替DES）保存。
+
+### TO-DO
+21点游戏自动生成最优解

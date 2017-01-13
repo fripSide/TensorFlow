@@ -1,0 +1,64 @@
+# lists
+{}
+{false; true, false}
+{1}
+{1, 2.0, -3, 2.3, .3}
+{ xz , x}
+{'t', z , '2'}
+{'x', 'y', 'z'}
+{nil, 2, "aa", 4,}
+{false, true, nil, "aa", z, 5,}
+
+# number
+{+1232.333333333, .4, -.6, +.7, -0.0E+9, +0e-1}
+-- { +-232}
+-- {2.3.3} -- exception
+
+# dicts
+--{1=}
+--{1=2},}
+--{1=, c = 2}
+--{"a"=3}
+--{"1.4"=4}
+--{a=}
+-- {1=2}
+{a=2}
+{[2]=3, a=nil, t=4}
+{[2]=3, 4, a=nil, t=4, [3]=4, nil, 6} -- {1:4, 3:6, t:4}
+{[""]="", ['']="", [' ']= ''}
+{1, 2, 3, nil, 4, nil, [5]=5} -- {1:1, 2:2, 3:3, 5:4}
+{a=nil, b = 1, c=t, 1, 2, 3, nil, 4, nil, [5]=5}
+{[1.2]=2, [1.3]=nil, [2]=3., [3]=4.}
+-- {a, 1., "x", true, nil, false, true, a=1., "b"=2, "1.3"=4, 1.3=4, ["12"]=5, [3]=3}
+{a, 1., "x", true, nil, false, true, a=4, ["12"]=5, [3]=3}
+{array = {65,23,5,},dict = {mixed = {43,54.33,false,9,string = "value",},array = {3,6,4,},string = "value",},}
+-- {array = {65,23,5,},dict = {mixed = {43,54.33,false,9,string = "value",},["array'] = {3,6,4,},string = "value",},}
+
+# quotation and Escape \
+{"\\"}
+{"\""}
+{"\"\"\\\''''"}
+-- {""sd, s}
+{'\97lo\10\04923"'}
+{'\97lo\10\04923\t\a\f\b\c\e"'}
+{["a\n\ta\rh"] = 1, "\nkeyyy\y\tdddd", ["b\bb"] = "b\bcb", ["c\'\c"] = 2}
+{'\0abc\00'}
+{['\114\111\111\116'] = {}}
+{"\\097\123", "\\97tex\t", {1,2,3, {name=1}, id=1}, ["\\99abc"]="\\98def"}
+
+# comment
+{1--[[comment]],1}
+{1--[===[comment]]]===],1}
+{--[[comment]]2,6,--[[]]a}
+{[====[value]====]}
+{a, 1., "x", true, nil, false, true, a=4, [[ asdad ]], [ [[asd]]] = 4, [3]=3}
+{[ [==[ abc ]==]]=3}
+{[ [[x]] ] = "x", ["y"] = "y", [ [[z]] ] = "z"}
+{[ [[a\\a]]] = "aa", ["bb"] = "bb", [ [[\ncc]] ] = "cc"}
+{['false']=[===[false]===],['true']=True}
+{[ [[index]] ]=2,-1, -2, 3, true, [[xstr]], {1,2,3, {a=-1}, a=1}, name=[[xstr]]}
+{["index"]=2,1, 2, 3, true, "\\ntext", {1,2,3, {a=1}, a=1}, var="", 1E5, [2E3]=1e3, [[xstr]]}
+
+
+# combined tests
+{nil, nil, nil, 233}
